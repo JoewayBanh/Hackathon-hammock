@@ -1,0 +1,5 @@
+.ms-Grid{
+    display: flex;
+    justify-content: start;
+    background-color: cyan;
+}
