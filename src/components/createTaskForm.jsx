@@ -1,5 +1,9 @@
+import { PrimaryButton, DefaultButton } from 'office-ui-fabric-react';
 import { useFormik } from "formik"
 import "./createTaskForm.css"
+import { Link } from 'react-router-dom';
+import { Label } from 'office-ui-fabric-react/lib/Label';
+import { TextField } from 'office-ui-fabric-react/lib/TextField';
 
 
 const CreateTaskForm = () => {
@@ -17,55 +21,64 @@ const CreateTaskForm = () => {
             alert(JSON.stringify(values, null, 2))
         }
     })
+    
     return (
         <>
-            <div className="ms-Grid" dir="ltr">
-                <form onSubmit={formik.handleSubmit}>
-                    <div className="ms-Grid-row">
-                        <div>
-                            <label htmlFor="description">Description</label>
+            <div>
+                <form className="formStyling" onSubmit={formik.handleSubmit}>
+                    <row>
+                        <div className="formComponents">
+                            <Label className="formLabel" >Description</Label>
+                            <textarea className="formDescr" onChange={formik.handleChange} values={formik.values.description} type="textfield" id="description" name="description" />
                         </div>
-                        <input onChange={formik.handleChange} values={formik.values.description} type="textfield" id="description" name="description" />
-                    </div>
-                    <div className="ms-Grid-row">
-                        <div>
-                            <label htmlFor="date">Date</label>
+                    </row>
+                    <row>
+                        <div className="formComponents">
+                            <Label className="formLabel " >Date</Label>
+                            <input className="formDate" onChange={formik.handleChange} values={formik.values.date} type="date" id="date" name="date" />
                         </div>
-                        <input onChange={formik.handleChange} values={formik.values.date} type="text" id="date" name="date" />
-                    </div>
-                    <div className="ms-Grid-row">
-                        <div>
-                            <label htmlFor="performer">Performer</label>
+                    </row>
+                    <row>
+                        <div className="formComponents">
+                            <Label className="formLabel">Performer</Label>
+                            <select className="formInput" onChange={formik.handleChange} values={formik.values.performer} id="performer" name="performer">
+                                <option>Test Account</option>
+                                <option>Test2</option>
+                            </select>
                         </div>
-                        <select onChange={formik.handleChange} values={formik.values.performer} id="performer" name="performer" />
-                    </div>
-                    <div className="ms-Grid-row">
-                        <div>
-                            <label htmlFor="client">Client</label>
+                    </row>
+                    <row>
+                    <div className="formComponents">
+                    <Label className="formLabel" >Client</Label>
+                        <select className="formInput" onChange={formik.handleChange} values={formik.values.client} id="client" name="client">
+                            <option>Test Account</option>
+                            <option>Test2</option>
+                        </select>
                         </div>
-                        <select onChange={formik.handleChange} values={formik.values.client} id="client" name="client" />
-                    </div>
-                    <div className="ms-Grid-row">
-                        <div>
-                            <label htmlFor="file">File ID</label>
+                        </row>
+                        
+                    <row>
+                    <div className="formComponents">
+                    <Label className="formLabel" >File ID</Label>
+                       <select className="formInput" onChange={formik.handleChange} values={formik.values.file} id="file" name="file">
+                            <option>Dummy File</option>
+                            <option>Dummy File 2</option>
+                        </select> 
                         </div>
-                        <select onChange={formik.handleChange} values={formik.values.file} id="file" name="file" />
-                    </div>
-                    <div className="ms-Grid-row">
-                        <div>
-                            <label htmlFor="status">Status</label>
-                        </div>
-                        <select onChange={formik.handleChange} values={formik.values.status} id="status" name="status">
-                            <option value="Day">Day</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        </select>
-                    </div>
-                    <button type="submit">Save</button>
-                    <button>Cancel</button>
+                        </row>
+                    <row>
+                    <div className="formComponents">
+                    <Label className="formLabel">Status</Label>
+                         <select className="formInput" onChange={formik.handleChange} values={formik.values.status} id="status" name="status">
+                            <option>Open</option>
+                            <option>Completed</option>
+                          </select>
+                           </div>
+                    </row>
+                    <PrimaryButton className="formBtns" text="Save" type="submit" />
+                    <Link to="/">
+                        <DefaultButton className="formBtns" text="Cancel" />
+                    </Link>
                 </form>
             </div>
         </>

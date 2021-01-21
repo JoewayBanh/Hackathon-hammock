@@ -1,5 +1,40 @@
-.ms-Grid{
+.stretchedBtn{
+    width: 100vw;
+}
+.centerThings{
     display: flex;
-    justify-content: start;
-    background-color: cyan;
+    justify-content: center;
+}
+.formStyling{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: red; */
+}
+.formComponents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1vh 2vh 1vh 2vh;
+}
+.formLabel{
+    display: flex;
+    justify-self: start !important;
+}
+.formBtns{
+    margin: 7vh 5vh 0vh 5vh;
+    padding: 1vh 2vh 1vh 2vh;
+    height: 7vh;
+    width: 100px;
+}
+.formInput{
+    width: 92vw;
+    height: 5vh;
+}
+.formDate{
+    width: 91vw;
+    height: 5vh;
+}
+.formDescr{
+    width: 91vw;
+    height: 10vh;
 }
