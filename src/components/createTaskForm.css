@@ -1,9 +1,11 @@
 .stretchedBtn{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
     width: 100vw;
 }
 .centerThings{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 .formStyling{
     width: 100vw;
@@ -19,6 +21,7 @@
 .formLabel{
     display: flex;
     justify-self: start !important;
+    
 }
 .formBtns{
     margin: 7vh 5vh 0vh 5vh;
